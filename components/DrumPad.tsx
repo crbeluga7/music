@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const drumSounds = [
   { name: "Kick", key: "Q", file: "/drum_samples/Kick.mp3" },
   { name: "Snare", key: "W", file: "/drum_samples/Snare.mp3" },
-  { name: "Hi-Hat", key: "E", file: "/drum_samples/Hihat.mp3" },
+  { name: "Hi-Hat", key: "E", file: "/drum_samples/HiHat.mp3" },
   { name: "Tom", key: "R", file: "/drum_samples/Tom.mp3" },
   { name: "Crash", key: "A", file: "/drum_samples/Crash.mp3" },
   { name: "Clap", key: "S", file: "/drum_samples/Clap.mp3" },
