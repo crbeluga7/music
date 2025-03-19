@@ -31,14 +31,19 @@ export default function SoundLibrary() {
 
   const playSound = () => {
     stopAudio();
-    const fileName = instrument.toLowerCase().replace(/\s+/g, "-") + ".mp3";
-    const audioPath = `/music/${fileName}`;
+    
+    // Replace spaces with hyphens but keep the original case
+    const fileName = instrument.replace(/\s+/g, "-") + ".mp3"; 
+    const audioPath = /music/${fileName};
 
     const newAudio = new Audio(audioPath);
     
     newAudio.play()
       .then(() => setIsPlaying(true))
-      .catch((error) => console.error("Error playing audio:", error));
+      .catch((error) => {
+        console.error("Error playing audio:", error);
+        alert("Audio file not found or cannot be played.");
+      });
 
     newAudio.onended = () => setIsPlaying(false);
     setAudio(newAudio);
@@ -108,11 +113,11 @@ export default function SoundLibrary() {
           </Button>
           {isPlaying && (
             <Button onClick={pauseSound} className="w-full">
-              {isPlaying ? "Stop" : "Resume"}
+              {isPlaying ? "Pause" : "Resume"}
             </Button>
           )}
         </div>
       </div>
-    </div>
-  );
+    </div>
+  );
 }
