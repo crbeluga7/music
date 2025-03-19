@@ -34,7 +34,7 @@ export default function SoundLibrary() {
     
     // Replace spaces with hyphens but keep the original case
     const fileName = instrument.replace(/\s+/g, "-") + ".mp3"; 
-    const audioPath = /music/${fileName};
+    const audioPath = `/music/${fileName}`;
 
     const newAudio = new Audio(audioPath);
     
